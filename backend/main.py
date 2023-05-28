@@ -4,6 +4,9 @@ from utils.kafka.consumer import MessageConsumer
 from service.yfdata import get_stock_data, predict
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from db import schema
+from service.register import create_user
+from service.login import login
 
 
 app = FastAPI()
@@ -29,6 +32,16 @@ def get_data_from_yf(q: Optional[str] = None):
 @app.get("/predict/{q}/{days}")  # days you want prediction
 def predict_future_days(q: Optional[str] = None, days: Optional[int] = 1):
     return predict(q, days)
+
+
+@app.post("/register")
+def register(request: schema.User):
+    return create_user(request=request)
+
+
+@app.post("/login")
+def signin(request: schema.User):
+    return login(request=request)
 
 
 @app.get("/produce")
