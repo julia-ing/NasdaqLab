@@ -8,7 +8,6 @@ class MessageConsumer:
             topic,
             bootstrap_servers=self.broker,
             value_deserializer=lambda x: x.decode("utf-8"),
-            group_id="my-group",
             auto_offset_reset="earliest",
             enable_auto_commit=True,
             consumer_timeout_ms = 1000

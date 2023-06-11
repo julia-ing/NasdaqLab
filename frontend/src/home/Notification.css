@@ -1,0 +1,10 @@
+.notificationWrap {
+    padding: 20px;
+}
+
+.notification {
+    margin: 5px;
+    padding: 8px;
+    border: 1px solid #e2e0e0;
+    border-radius: 8px;
+}

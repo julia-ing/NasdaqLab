@@ -15,7 +15,7 @@ class MessageProducer:
 
     def send_message(self, msg, auto_close=True):
         try:
-            future = self.producer.send(self.topic, msg)
+            future = self.producer.send(self.topic, value=msg)
             self.producer.flush()
             if auto_close:
                 self.producer.close()

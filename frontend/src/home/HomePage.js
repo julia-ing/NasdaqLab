@@ -1,5 +1,6 @@
 import Chart from './Chart';
 import Prediction from './Prediction';
+import Notification from './Notification';
 
 function HomeTemplate() {
   return (
@@ -7,6 +8,7 @@ function HomeTemplate() {
       <div style={{ display: "flex" }}>
         <Chart></Chart>
         <Prediction></Prediction>
+        <Notification></Notification>
       </div>
     </div>
   );

@@ -16,3 +16,8 @@ class Token(BaseModel):
 
 class TokenData(BaseModel):
     nickname: Optional[str] = None
+
+
+class Predict(BaseModel):
+    stock: str
+    days: int

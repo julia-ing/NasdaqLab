@@ -14,8 +14,6 @@ function Prediction() {
     setDays(e.target.value);
   };
 
-  // const {replace} = useNavigate();
-
   const predictAction = () => {
       axios.post('http://localhost:8000/predict', {
           stock: stock,
@@ -24,7 +22,6 @@ function Prediction() {
       .then((response) => {
           // success
           console.log('예측 요청');
-          // replace("/");
       })
       .catch((error) => {
           // error
@@ -47,7 +44,7 @@ function Prediction() {
         <div className="inputWrap2">
           <input
             className="input2"
-            type="password"
+            type="text"
             placeholder="예측 일 수"
             value={days}
             onChange={handleDays}
